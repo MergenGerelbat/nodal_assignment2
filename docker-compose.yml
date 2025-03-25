@@ -1,0 +1,22 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  service1:
+    build: ./service-1-java
+    depends_on:
+      - rabbitmq
+    restart: on-failure
+
+  service2:
+    build: ./service-2-kotlin
+    depends_on:
+      - rabbitmq
+    restart: on-failure
