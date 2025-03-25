@@ -1,3 +1,9 @@
+package com.nodalx.service2
+
+import org.springframework.amqp.core.AmqpTemplate
+import org.springframework.amqp.rabbit.annotation.RabbitListener
+import org.springframework.stereotype.Component
+
 @Component
 class MessageListener(val rabbitTemplate: AmqpTemplate) {
 
