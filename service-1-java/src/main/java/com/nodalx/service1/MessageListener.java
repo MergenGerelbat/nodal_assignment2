@@ -1,3 +1,8 @@
+package com.nodalx.service1;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Component;
+
 @Component
 public class MessageListener {
 
